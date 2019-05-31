@@ -1,12 +1,13 @@
-package excute;
+package execute;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
-import algrithm.sentrybubbling;
-import algrithm.twowaybubbling;
+import algorithm.quickSort;
+import algorithm.sentrybubbling;
+import algorithm.twowaybubbling;
 
 public class runAlgorithm {
 	private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
@@ -18,10 +19,22 @@ public class runAlgorithm {
     	  }
     	  long startTime = System.currentTimeMillis();
     	  System.out.println(startTime);
-    	  twowaybubbling twBubble = new twowaybubbling();
-    	  //sentrybubbling sentryBubble = new sentrybubbling();
-    	  random = twBubble.run(random);
+    	  /**
+    	   * 双向冒泡排序
+    	   */
+    	  //twowaybubbling twBubble = new twowaybubbling();
+    	  //random = twBubble.run(random);
+    	  /**
+    	   * 带标记的双向排序
+    	   */
+    	  //sentrybubbling sentryBubble = new sentrybubbling();  	  
     	  //random = sentryBubble.run(random);
+    	  /**
+    	   * 快速排序
+    	   */
+    	  quickSort quicksort = new quickSort();
+    	  random = quicksort.run(random, 0, random.length-1);
+    	  
     	  long endTime = System.currentTimeMillis();
     	  System.out.println(endTime);
     	  for(int i : random) {
